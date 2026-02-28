@@ -1,0 +1,36 @@
+package seleniumPractice;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class JavaScripttExecutor {
+
+	public static void main(String[] args) {
+		WebDriverManager.chromedriver().setup();
+
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--no-proxy-server", "--disable-dev-shm-usage", "--no-sandbox", "--disable-gpu",
+				"--remote-allow-origins=*", "--user-data-dir=C:/temp/chrome-profile");
+
+		WebDriver driver = new ChromeDriver(options);
+
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		
+
+		driver.get("https://webdriveruniversity.com/index.html");
+
+		WebElement Click=driver.findElement(By.xpath("//h1[text()='BUTTON CLICKS']"));
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("argument[0].click;", Click);
+		
+	}
+
+}

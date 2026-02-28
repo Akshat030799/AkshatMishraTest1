@@ -1,0 +1,41 @@
+package seleniumPractice;
+import java.io.FileInputStream;
+import java.io.IOException;
+
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+public class ExcelFiles {
+
+	public static void main(String[] args) throws IOException {
+		// 
+		FileInputStream file= new FileInputStream("C:\\Users\\pmmis\\eclipse-workspace\\SeleniumTestingPractice\\TestData\\QA Assignment - Sourav_Bhange.xlsx");
+	
+	XSSFWorkbook workbook= new XSSFWorkbook(file);
+	XSSFSheet sheet =workbook.getSheet("Test_Cases");
+	int TotalRows= sheet.getLastRowNum();
+	int TotalCells= sheet.getRow(1).getLastCellNum();
+	System.out.println(TotalRows);
+	System.out.println(TotalCells);
+	FileInputStream file1= new FileInputStream("C:\\Users\\pmmis\\eclipse-workspace\\SeleniumTestingPractice\\TestData\\QA Assignment - Sourav_Bhange.xlsx");
+
+	XSSFWorkbook workbook1= new XSSFWorkbook(file1);
+	XSSFSheet sheet1 =workbook1.getSheet("Bugs + Enhancements");
+	int TotalRows1= sheet1.getLastRowNum();
+	int TotalCells1= sheet1.getRow(1).getLastCellNum();
+	System.out.println(TotalRows1);
+	System.out.println(TotalCells1);
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	}
+
+}

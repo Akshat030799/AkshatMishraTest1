@@ -1,0 +1,18 @@
+package seleniumPractice;
+
+import org.apache.commons.lang3.RandomStringUtils;
+
+public class TestingclassCommanMethods {
+
+	public static void main(String[] args) {
+		
+		TestingclassCommanMethods abc=new TestingclassCommanMethods();
+		System.out.println(abc.randomString());	
+		
+
+}
+	public String randomString() {
+		String random=RandomStringUtils.randomAlphabetic(5);
+		return random;
+
+		}}

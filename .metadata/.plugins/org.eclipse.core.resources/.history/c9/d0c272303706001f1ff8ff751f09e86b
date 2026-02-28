@@ -1,0 +1,11 @@
+
+public class StringBuffer {
+
+	public static void main(String[] args) {
+		String k="akshat";
+		int length=k.length();
+		k.charAt(0);
+
+	}
+
+}

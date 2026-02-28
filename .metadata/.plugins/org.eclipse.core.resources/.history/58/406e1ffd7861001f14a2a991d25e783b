@@ -1,0 +1,33 @@
+package com.ApiAutomation.com.ApiAutomation;
+import io.restassured.RestAssured;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
+
+import static io.restassured.RestAssured.*;
+import static org.hamcrest.Matchers.*;
+
+
+
+public class Api4 {
+
+	public static void main(String[] args) {
+		
+		RestAssured.baseURI="https://rahulshettyacademy.com";
+		Response getRespond  =given().body("{\r\n"
+				+ "\"name\":\"Learn oo Appium java with Java\",\r\n"
+				+ "\"isbn\":\"biud\",\r\n"
+				+ "\"aisle\":\"285\",\r\n"
+				+ "\"author\":\"akshat kkk\"\r\n"
+				+ "}\r\n"
+				+ "").when().post("Library/Addbook.php")
+		.then().assertThat().statusCode(200).extract().response();
+		int code=getRespond.getStatusCode();
+
+		String res=getRespond.asString();
+		JsonPath jp=new JsonPath(res)	;
+		System.out.println(jp);
+	System.out.println();
+		System.out.println(code);
+	}
+
+}

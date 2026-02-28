@@ -1,0 +1,43 @@
+package AkshatPractice;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Akshat1 { 
+	public static void main(String[] args) throws InterruptedException {
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.rediff.com/");
+	Thread.sleep(5000);
+	WebElement Red=driver.findElement(By.xpath("//a[text()='Rediffmail']"));
+	System.out.println(Red.getText());
+	Red.click();
+	WebElement search =	driver.findElement(By.id("login1"));
+search.sendKeys("Today");
+System.out.println(search.getAttribute("value"));
+		driver.navigate().to("https://www.facebook.com/r.php");
+		List<WebElement> Web=driver.findElements(By.xpath("//select[@id='day']/option"));
+		System.out.println(Web.size());
+		Web.get(7).click();
+		
+		List<WebElement> Web1=driver.findElements(By.xpath("//select[@id='month']/option"));
+		System.out.println(Web1.size());
+		for(int i=0; i<=Web1.size();i++) {
+			System.out.println(Web1.get(i));
+			if(Web1.get(i).getText().equalsIgnoreCase("Apr")){
+				Web1.get(i).click();
+				
+			}
+			
+		}
+		
+}
+
+}

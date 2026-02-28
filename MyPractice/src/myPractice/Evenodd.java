@@ -1,0 +1,18 @@
+package myPractice;
+
+public class Evenodd {
+
+	public static void main(String[] args) {
+		int k=7;
+		
+		if (k%2==0) {
+			System.out.println("Even");
+		}
+		else 
+		{
+			System.out.println("Odd");
+		}
+		
+	}
+
+}

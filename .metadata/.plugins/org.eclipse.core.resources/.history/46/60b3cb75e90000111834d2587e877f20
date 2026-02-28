@@ -1,0 +1,71 @@
+package PageObjectModel;
+
+import java.time.Duration;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class LoginPageClass {
+	
+	
+	WebDriver driver;
+@BeforeClass@Parameters({"browser"})
+void setup(String name) {
+	
+	if (name.equalsIgnoreCase("chrome")) {
+		WebDriverManager.chromedriver().setup();
+
+	//ChromeOptions options = new ChromeOptions();
+	//options.addArguments("--no-proxy-server", "--disable-dev-shm-usage", "--no-sandbox", "--disable-gpu",
+			//"--remote-allow-origins=*", "--user-data-dir=C:/temp/chrome-profile");
+
+	 driver = new ChromeDriver();
+	}
+	else if(name.equalsIgnoreCase("Edge")) {
+		
+		WebDriverManager.edgedriver().setup();
+		driver=new EdgeDriver();
+		
+	}
+	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+	
+
+	driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+}
+@AfterClass
+void teardown() {
+	driver.quit();
+}
+
+
+@Test(dataProvider="akshat")
+void TestLogin(String a, String b) throws InterruptedException {
+	LoginTest Login = new LoginTest(driver);
+	Login.Username(a);
+	Login.password(b);
+	Login.clicks();
+	Assert.assertEquals(driver.getTitle(),"OrangeHRM" );
+	System.out.println(driver.getCurrentUrl());
+	Assert.assertEquals(driver.getCurrentUrl(),"https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index" );
+}
+@DataProvider(name="akshat")
+
+Object [][] Test(){
+	
+	Object abs[] []  ={{"akshat","Mishra"},
+			{"Jatin", "kHATRI"},
+	{"Admin","admin123"}};
+	return abs;
+	
+	
+} 
+}

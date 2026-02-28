@@ -1,0 +1,62 @@
+package com.project.com.project;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.Select;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class XSEED {
+
+
+		public static void main(String[] args) throws InterruptedException {
+			WebDriverManager.chromedriver().setup();
+			ChromeOptions options=new ChromeOptions();
+			options.addArguments("--Incognito");
+			
+		 WebDriver driver =new ChromeDriver(options);
+			driver.manage().window().maximize();
+driver.get("https://www.way2automation.com/way2auto_jquery/registration.php#load_box");
+driver.findElement(By.xpath("//p//input[@name='name'][1]")).sendKeys("Akshat");
+driver.findElement(By.xpath("(//p//input[@type='text'])[2]")).sendKeys("Mishra");
+driver.findElement(By.xpath("(//input[@name='m_status'])[1]")).click();
+driver.findElement(By.xpath("(//input[@name='hobby'])[1]")).click();
+WebElement a=driver.findElement(By.xpath("(//select)[1]"));
+Select s=new Select(a);
+s.selectByVisibleText("India");
+
+WebElement b=driver.findElement(By.xpath("(//select)[2]"));
+Select s1=new Select(b);
+s1.selectByVisibleText("1");
+
+WebElement c=driver.findElement(By.xpath("(//select)[3]"));
+Select s2=new Select(c);
+s2.selectByVisibleText("1");
+
+WebElement d=driver.findElement(By.xpath("(//select)[4]"));
+Select s3=new Select(d);
+s3.selectByVisibleText("2014");
+
+driver.findElement(By.xpath("(//input[@name='phone'])[1]")).sendKeys("9893114339");
+driver.findElement(By.xpath("(//input[@name='username'])[1]")).sendKeys("akshat@123");
+driver.findElement(By.xpath("(//input[@name='email'])[1]")).sendKeys("akshat123@gmail.cm");
+driver.findElement(By.xpath("(//input[@name='password'])[1]")).sendKeys("abc123");
+driver.findElement(By.xpath("(//fieldset//input[@name='c_password'])")).sendKeys("abc123");
+
+
+
+
+driver.findElement(By.xpath("//input[@value='submit']")).click();
+
+
+
+
+		
+
+
+}}

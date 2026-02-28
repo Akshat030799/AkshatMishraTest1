@@ -1,0 +1,27 @@
+package Collection;
+
+import java.util.ArrayList;
+
+public class ArrayListProg {
+
+	public static void main(String[] args) {
+		ArrayList abcd=new ArrayList();
+		abcd.add("abc:");
+		abcd.add("10");
+		abcd.add(7);
+		System.out.println(abcd+" "+abcd.size());
+		System.out.println(abcd.get(2));
+		
+	
+		ArrayList<String> abcde=new ArrayList();
+		abcde.add("akkkk");
+		System.out.println(abcde);
+		System.out.println(abcde.size());
+		
+		ArrayList<Integer>ab=new ArrayList();
+		ab.add(5);
+		ab.add(7);
+		System.out.println(ab);
+	}
+
+}

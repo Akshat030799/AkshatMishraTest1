@@ -1,0 +1,13 @@
+package prg1;
+
+public class P1 {
+	int i=1;
+	static int k=5;
+
+	public static void main(String[] args) {
+int i=7;
+System.out.println(i);
+
+	}
+
+}

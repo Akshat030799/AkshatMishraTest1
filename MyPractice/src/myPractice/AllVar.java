@@ -1,0 +1,38 @@
+package myPractice;
+
+public class AllVar {
+	static int akshat=7;// static v
+	int ankit=8; //globlal var
+	
+	public static void StaticMethod() {
+		akshat=9;//modification
+		System.out.println("static method "+akshat);
+		
+	}
+	public void NonStatcMethod() {
+		
+		akshat=11;
+		ankit=55;
+		System.out.println("NonStaic method"+akshat);
+		System.out.println("NonStaic method"+ankit);
+	}
+	
+	
+	public static void main(String[] args) {
+		System.out.println("Main method1 "+akshat);
+		StaticMethod();
+		AllVar devyani=new AllVar();
+		devyani.NonStatcMethod();
+		System.out.println("Main method2 "+akshat);
+		System.out.println("Main method3 "+AllVar.akshat);
+		System.out.println("Main method4 "+devyani.akshat);//
+		System.out.println("Main method5 "+devyani.ankit);//xxx
+		akshat=500;
+	devyani.ankit=855;
+		System.out.println("Main method6 "+akshat+" "+devyani.ankit);
+		
+		
+
+	}
+
+}

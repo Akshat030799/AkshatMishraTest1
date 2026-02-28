@@ -1,0 +1,47 @@
+package seleniumPractice;
+
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class CountnoofRowsandCloumns {
+	public static void main(String[] args) {
+		WebDriverManager.chromedriver().setup();
+
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--no-proxy-server", "--disable-dev-shm-usage", "--no-sandbox", "--disable-gpu",
+				"--remote-allow-origins=*", "--user-data-dir=C:/temp/chrome-profile");
+
+		WebDriver driver = new ChromeDriver(options);
+
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		
+
+		driver.get("https://testautomationpractice.blogspot.com/");
+		List<WebElement> fulllist= driver.findElements(By.xpath("//table[@name='BookTable']//tr"));
+		System.out.println("No of rows  =  "+fulllist.size());
+		
+		List<WebElement> Column= driver.findElements(By.xpath("//table[@name='BookTable']//th"));
+		System.out.println("No of rows  =  "+Column.size());
+		for(WebElement all: fulllist) {
+			
+			System.out.println(all.getText());
+		}
+for(WebElement all1: Column) {
+			
+			System.out.println(all1.getText());
+		}
+WebElement k=driver.findElement(By.xpath("((//table[@name='BookTable']//tr)[5]//td)[1]"));
+String kk=k.getText();
+System.out.println("       "+kk);
+driver.close();
+		
+
+}}

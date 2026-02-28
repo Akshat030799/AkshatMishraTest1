@@ -1,0 +1,23 @@
+
+
+import java.io.*;
+public class StringBuffernames {
+
+	public static void main(String[] args) {
+		String name="AkshatMishhhjjjkkhra";
+		System.out.println(name.replace("@", "   "));
+		System.out.print(name.substring(0, 6)+ " ");
+		System.out.println(name.substring(6, 12));
+		System.out.println(name.substring(name.length()-2, name.length()));
+	String nAame= "Akshat";
+	 //StringBuffer sb = new StringBuffer();
+	 StringBuffer buffer = new StringBuffer(); 
+	 buffer.appends();
+	
+
+	
+	
+
+	}
+
+}

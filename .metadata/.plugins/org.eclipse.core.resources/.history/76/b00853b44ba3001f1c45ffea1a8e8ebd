@@ -1,0 +1,13 @@
+package prg1;
+
+public class p2 {
+
+	public static void main(String[] args) {
+		P1 abc=new P1(5,7);
+		
+		P1 zyz=new P1(9,10);
+		abc.KKK();
+zyz.KKK();
+	}
+
+}

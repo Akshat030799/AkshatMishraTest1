@@ -1,0 +1,32 @@
+package com.project.com.project;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class XSEED {
+
+
+		public static void main(String[] args) throws InterruptedException {
+			WebDriverManager.chromedriver().setup();
+			ChromeOptions options=new ChromeOptions();
+			options.addArguments("--Incognito");
+			
+		 WebDriver driver =new ChromeDriver(options);
+			driver.manage().window().maximize();
+driver.get("https://www.way2automation.com/way2auto_jquery/registration.php#load_box");
+driver.findElement(By.xpath("//p//input[@name='name'][1]")).sendKeys("Akshat");
+driver.findElement(By.xpath("(//p//input[@type='text'])[2]")).sendKeys("Mishra");
+
+
+
+		
+
+
+}}

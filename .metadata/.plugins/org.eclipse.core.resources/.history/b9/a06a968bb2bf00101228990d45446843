@@ -1,0 +1,11 @@
+package myPractice;
+
+public class ShortingggPractice {
+
+	public static void main(String[] args) {
+		int a[]={22,25,28,89,95,58,74,58};
+		System.out.println(a.length);
+
+	}
+
+}

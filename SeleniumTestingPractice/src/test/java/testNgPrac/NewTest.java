@@ -1,0 +1,90 @@
+package testNgPrac;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class NewTest {
+	WebDriver driver;
+	  @BeforeClass 
+	  @Parameters({"browser"})
+	  void setup(String br) {
+		  
+		  if(br.equalsIgnoreCase("Chrome")) {
+		  WebDriverManager.chromedriver().setup();
+			 driver=new ChromeDriver();
+			 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+			driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");  
+		  }
+		  
+		  else if(br.equalsIgnoreCase("Edge")) {
+			  WebDriverManager.edgedriver().setup();
+			  driver = new EdgeDriver();
+			  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+			  driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+
+			 }
+		 
+	  }
+	  
+	 @AfterClass
+	  void closeclass() {
+		  driver.quit();
+		  
+		  
+	  }
+	 
+	 @Test(dataProvider= "aks")
+	 void Test(String use, String psd) throws InterruptedException {
+		 driver.findElement(By.xpath("//input[@name='username']")).sendKeys(use);
+		  driver.findElement(By.xpath("//input[@name='password']")).sendKeys(psd);
+		  driver.findElement(By.xpath("//button[@type='submit']")).click();
+		  boolean haikya=  driver.findElement(By.xpath("//img[@alt='client brand banner']")).isDisplayed();
+		  System.out.println(haikya);
+		  //Assert.assertTrue(haikya);
+		  
+		  if(haikya==true) {
+			  
+			  Assert.assertTrue(haikya);
+			  Thread.sleep(5000);
+		  
+		 driver.findElement(By.xpath("//p[@class='oxd-userdropdown-name']")).click();
+		 Thread.sleep(5000);
+		  driver.findElement(By.xpath("//a[text()='Logout']")).click();
+		  }
+		  else {
+			  Assert.fail();
+		  }
+	 }
+
+	 
+@DataProvider(name="aks")  // indices= {1}
+Object [] [] dataprovid(){
+	 
+	 Object AKS [] []= {{"AKSAHT", "mISHRA"},
+	                    {"Admin","admin123"},
+	                    {"GOOT","POOT"},
+	                    {"Admin","admin123"}};
+			
+	 return AKS;
+			 
+			 
+			 
+	 }
+	 
+
+}
+
+

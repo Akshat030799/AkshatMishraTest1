@@ -1,0 +1,23 @@
+package com.ApiAutomation.com.ApiAutomation;
+
+import static io.restassured.RestAssured.given;
+
+import io.restassured.RestAssured;
+
+public class Api4 {
+
+	public static void main(String[] args) {
+		RestAssured.baseURI="https://rahulshettyacademy.com";
+		String data=given().log().all().body("{\r\n"
+				+ "\"name\":\"Learn oo Appium java with Java\",\r\n"
+				+ "\"isbn\":\"biud\",\r\n"
+				+ "\"aisle\":\"285\",\r\n"
+				+ "\"author\":\"akshat kkk\"\r\n"
+				+ "}\r\n"
+				+ "").when().post("Library/Addbook.php")
+		.then().assertThat().statusCode(200)
+		.log().all().extract().response().asString();
+		
+	}
+
+}

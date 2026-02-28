@@ -1,0 +1,15 @@
+
+public class Excption {
+
+	public static void main(String[] args) {
+		int a= 5250;
+		int b=0;
+	try {
+		System.out.println(a/b);
+		System.out.println(a/b);
+	}
+		finally {
+			System.out.println("akshat");}
+	}
+
+}

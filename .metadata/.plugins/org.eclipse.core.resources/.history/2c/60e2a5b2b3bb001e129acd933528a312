@@ -1,0 +1,17 @@
+package practice;
+
+public class b {
+
+	public static void main(String[] args) {
+	
+	int i=5;
+	for(int k=6;k>5;k--) {
+		System.out.println("aks");
+		
+		
+	}
+	
+
+	}
+
+}

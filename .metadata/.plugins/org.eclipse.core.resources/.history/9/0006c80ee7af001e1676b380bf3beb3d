@@ -1,0 +1,51 @@
+package com.akshat1.com.akshat1;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Trying {
+	public static void main(String[] args) {
+		WebDriverManager.edgedriver().setup();
+		WebDriver driver =new EdgeDriver();
+		driver.get("https://www.functionize.com/h/test-automation?utm_source=google&utm_medium=paid%20search&utm_campaign=automated%20web%20testing&utm_term=automated%20website%20testing&utm_campaign=Z+-+India+-+Automated+Web+Testing&utm_source=adwords&utm_medium=ppc&hsa_acc=5488573823&hsa_cam=16375912712&hsa_grp=133300773506&hsa_ad=583785827749&hsa_src=g&hsa_tgt=kwd-306061616808&hsa_kw=automated%20website%20testing&hsa_mt=p&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=Cj0KCQiAnfmsBhDfARIsAM7MKi1MDCDcRSjlwrPJa5amG2ptGpfQQRIJTTWU8FXDdW-_gnU3J289UQ4aAuHmEALw_wcB");
+driver.manage().window().maximize();
+		
+		
+		WebElement Fstname=driver.findElement(By.xpath("//input[@id='firstname-e65821c3-a1ec-4b15-9767-25c917c9afc1']"));
+		WebElement Lstname=driver.findElement(By.xpath("//input[@id='lastname-e65821c3-a1ec-4b15-9767-25c917c9afc1']"));
+		WebElement Email=driver.findElement(By.xpath("//input[@id='email-e65821c3-a1ec-4b15-9767-25c917c9afc1']"));
+		WebElement phoneNo=driver.findElement(By.xpath("//input[@id='phone-e65821c3-a1ec-4b15-9767-25c917c9afc1']"));
+		WebElement ComapnyName=driver.findElement(By.xpath("//input[@id='company-e65821c3-a1ec-4b15-9767-25c917c9afc1']"));
+		WebElement Yes=driver.findElement(By.xpath("//input[@id='do_you_have_any_hands_on_experience_with_selenium_or_other_scripted_automation_0-e65821c3-a1ec-4b15-9767-25c917c9afc1']"));
+		WebElement Checkbox=driver.findElement(By.xpath("//input[@id='terms_and_conditions-e65821c3-a1ec-4b15-9767-25c917c9afc1']"));
+		
+		WebElement Fdd=driver.findElement(By.xpath("//select[@id='job_role-e65821c3-a1ec-4b15-9767-25c917c9afc1']"));
+		WebElement Sdd=driver.findElement(By.xpath("//select[@id='total_size_of_test_suite-e65821c3-a1ec-4b15-9767-25c917c9afc1']"));
+		WebElement Submit=driver.findElement(By.xpath("//input[@type='submit']"));
+		
+		Fstname.sendKeys("aKSHAT");
+		Lstname.sendKeys("pANDEY");
+		Email.sendKeys("AKSHAT@FB.COM");
+		 phoneNo.sendKeys("9893445667");
+		 ComapnyName.sendKeys("GTY");
+		 
+		Select s=new Select(Fdd);
+		s.selectByIndex(1);
+		
+		Select ss=new Select(Sdd);
+		ss.selectByIndex(1);
+		Yes.click();
+		Actions a=new Actions(driver);
+		a.doubleClick(Checkbox);
+		
+		
+		
+		}
+
+}

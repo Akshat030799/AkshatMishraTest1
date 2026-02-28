@@ -1,0 +1,113 @@
+package AkshatPractice;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Akshat1 { 
+	public static void main(String[] args) throws InterruptedException {
+		
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://demowebshop.tricentis.com/login?ReturnUrl=%2fcustomer%2finfo");
+		
+		WebElement Register=driver.findElement(By.xpath("//a[@class='ico-register']"));
+		Register.click();
+		
+		WebElement Gender=driver.findElement(By.xpath("(//input[@name='Gender'])[1]"));
+		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(20));
+	    wait.until(ExpectedConditions.visibilityOf(Gender));
+		Gender.click();
+		
+		WebElement Firstname= driver.findElement(By.xpath("(//input[@class='text-box single-line'])[1]"));
+		Firstname.sendKeys("Sayali");
+		
+		WebElement Lastname= driver.findElement(By.xpath("(//input[@class='text-box single-line'])[2]"));
+		Lastname.sendKeys("Khelpede");
+		
+		WebElement Email= driver.findElement(By.xpath("(//input[@class='text-box single-line'])[2]"));
+		Email.sendKeys("Khelpede@gmail.com");
+		
+		WebElement Password= driver.findElement(By.xpath("(//input[@class='text-box single-line password'])[1]"));
+		Password.sendKeys("Sayali@123");
+		
+		WebElement  ConfirmPassword= driver.findElement(By.xpath("(//input[@class='text-box single-line password'])[2]"));
+		ConfirmPassword.sendKeys("Sayali@123");
+		
+		WebElement  Registerbutton= driver.findElement(By.xpath("//input[@id='register-button']"));
+		Registerbutton.click();
+		
+		WebElement  LoginButton= driver.findElement(By.xpath("//a[@href='/login']"));
+		WebDriverWait wait1=new WebDriverWait(driver,Duration.ofSeconds(20));
+	    wait.until(ExpectedConditions.visibilityOf(LoginButton));
+		Gender.click();
+		
+		
+		
+		
+	}
+	
+}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		/*//driver.get(props.getProperty("searchTerm"));
+	Thread.sleep(5000);
+	WebElement Red=driver.findElement(By.xpath("//a[text()='Rediffmail']"));
+	System.out.println(Red.getText());
+	Red.click();
+	WebElement search =	driver.findElement(By.id("login1"));
+search.sendKeys("Today");
+System.out.println(search.getAttribute("value"));
+		driver.navigate().to("https://www.facebook.com/r.php");
+		List<WebElement> Web=driver.findElements(By.xpath("//select[@id='day']/option"));
+		System.out.println(Web.size());
+		Web.get(7).click();
+		for(int i=0; i<=Web.size()-1;i++) {
+			System.out.print(Web.get(i).getText()+ " ");
+			Web.get(i).click();
+			Web.get(7).click();
+		}
+		
+		
+		List<WebElement> Web1=driver.findElements(By.xpath("//select[@id='month']/option"));
+		System.out.println(Web1.size());
+		for(int i=0; i<=Web1.size()-1;i++) {
+			System.out.print(Web1.get(i).getText()+ " ");
+			Web1.get(i).click();
+			Web1.get(7).click();*/
+	
+
+

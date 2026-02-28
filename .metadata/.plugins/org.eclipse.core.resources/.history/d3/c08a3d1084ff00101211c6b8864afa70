@@ -1,0 +1,9 @@
+package testNgPrac;
+
+import org.testng.annotations.Test;
+
+public class cdf {
+  @Test
+  public void f() {
+  }
+}

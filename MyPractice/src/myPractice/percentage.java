@@ -1,0 +1,14 @@
+package myPractice;
+
+public class percentage {
+
+	public static void main(String[] args) {
+		int k=154;
+		
+		
+		
+	
+		
+	}
+
+}

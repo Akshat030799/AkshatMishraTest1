@@ -1,0 +1,11 @@
+package Collection;
+
+public class ArrayListProg {
+
+	public static void main(String[] args) {
+		ArrayList<String> abcd=new ArrayList();
+		
+		System.out.println(abcd);
+	}
+
+}

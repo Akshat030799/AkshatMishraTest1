@@ -1,0 +1,29 @@
+package com.project.com.project;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class XSEED {
+
+
+		public static void main(String[] args) throws InterruptedException {
+			WebDriverManager.chromedriver().setup();
+			ChromeOptions options=new ChromeOptions();
+			options.addArguments("--Incognito");
+			
+		 WebDriver driver =new ChromeDriver(options);
+			driver.manage().window().maximize();
+driver.get("https://sta-web.qa.xseeddigital.info/");
+Thread.sleep(100000);
+
+WebElement o=driver.findElement(By.xpath("//flt-semantics[@id='flt-semantic-node-13']"));
+o.click();
+		
+//driver.findElement(By.xpath("//flt-semantics[@id='flt-semantic-node-16']")).click();}
+
+}

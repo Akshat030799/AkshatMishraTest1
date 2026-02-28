@@ -1,0 +1,21 @@
+import java.util.Arrays;
+
+public class StringtoChar {
+
+	public static void main(String[] args) {
+		String name= "AKSHAT";
+		
+		char [] kiwi=name.toCharArray();
+		
+		System.out.println(Arrays.toString(kiwi));
+		
+		String namae="Akshat Mishra";
+	String []a=	namae.split(" ");
+	
+	System.out.println(a);
+
+		
+		
+	}
+
+}

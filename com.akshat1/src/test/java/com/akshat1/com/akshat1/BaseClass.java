@@ -1,0 +1,34 @@
+package com.akshat1.com.akshat1;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+
+public class BaseClass { 
+	public static void main(String[] args) throws IOException {
+		BaseClass o=new BaseClass();
+		o.readCongfig();
+	}
+	public void readCongfig() throws IOException {
+		
+		
+try {
+	FileInputStream fileo= new FileInputStream("C:\\Users\\pmmis\\eclipse-workspace\\com.akshat1\\data\\testdata.properties");
+Properties prop=new Properties();
+prop.load(fileo);
+
+
+String Brow=prop.getProperty("Name");
+System.out.println(Brow);
+} catch (FileNotFoundException e) {
+	// TODO Auto-generated catch block
+	e.printStackTrace();
+}
+
+		
+		
+	}
+	
+
+}

@@ -1,0 +1,16 @@
+package akki;
+
+public class aks {
+
+	public static void main(String[]args){
+	System.out.println("Hello Akshat");
+	aks k=new aks();
+	int j=k.aks(55);
+	System.out.println(j);
+	}
+	public int aks(int k) {
+		
+		return k++;
+	}
+
+}

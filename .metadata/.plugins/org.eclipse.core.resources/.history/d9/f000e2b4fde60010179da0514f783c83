@@ -1,0 +1,62 @@
+package seleniumPractice;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import java.util.List;
+import org.openqa.selenium.WebElement;
+
+
+public class ForTagNames {
+
+	public static void main(String[] args) throws InterruptedException {
+		/*//WebDriverManager.chromedriver().setup();
+		int i=0;
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://testautomationpractice.blogspot.com/");
+		
+		List<WebElement> aTagswitha=driver.findElements(By.tagName("a"));
+		int size=aTagswitha.size();
+		System.out.println(size);
+		   int count = 1;
+		for(WebElement ss: aTagswitha) {
+			String linkText = ss.getText();
+
+            // Avoid empty link names
+            if (!linkText.isEmpty()) {
+                System.out.println("Site " + count + " : " + linkText);
+                count++;
+            }
+        }
+		Thread.sleep(10000);
+		driver.quit();*/
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://parabank.parasoft.com/parabank/admin.htm");
+		List<WebElement> images=driver.findElements(By.tagName("li"));
+		int sizeimg=images.size();
+		System.out.println(sizeimg);
+		 int count1 = 1;
+			for(WebElement imgstore: images) {
+				String linkText1 = imgstore.getText();
+
+	            // Avoid empty link names
+	            if (!linkText1.isEmpty()) {
+	                System.out.println("Site " + count1 + " : " + linkText1);
+	                count1++;
+	            }
+	        }
+		
+		
+		
+		
+		Thread.sleep(10000);
+
+        driver.quit();
+    }
+}
+
+
+		
+		
+		
+		

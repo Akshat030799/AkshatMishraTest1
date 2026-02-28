@@ -1,0 +1,22 @@
+package prg1;
+
+public class P1 {
+	int i;
+	 int k;
+
+	P1 (int o, int l){
+		
+		i=o;
+		k=l;
+		
+	}
+	public static void main(String[] args) {
+		
+
+
+	}
+	public void KKK() {
+		System.out.println(i+" "+k);
+	}
+
+}

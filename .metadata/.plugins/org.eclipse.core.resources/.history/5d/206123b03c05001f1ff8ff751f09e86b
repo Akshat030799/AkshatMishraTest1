@@ -1,0 +1,22 @@
+
+public class PrimeNumber {
+
+	public static void main(String[] args) {
+		int k=23;
+		
+		for(int i=1;i<=100;i++) {
+			
+		if(i%2==0) {
+			System.out.println("not prime");
+		}
+		else if (i%i==0) {
+			System.out.println("NOT A PRIME");
+		}
+		else {
+			System.out.println(i);
+		}
+		}
+
+	}
+
+}

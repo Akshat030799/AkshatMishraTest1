@@ -1,0 +1,13 @@
+package shamijha;
+
+public class AllVar1 {
+	public static void main(String[] args) {
+	
+	AllVar.StaticMethod();//9
+		AllVar.main(args);
+		AllVar anuj=new AllVar();
+		anuj.NonStatcMethod();
+	 System.out.println("Akshat value=" + AllVar.akshat);	
+	}
+
+}

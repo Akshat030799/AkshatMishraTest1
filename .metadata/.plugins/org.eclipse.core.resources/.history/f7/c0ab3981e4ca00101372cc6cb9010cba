@@ -1,0 +1,25 @@
+package myPractice;
+
+public class Akshat3 implements Akshat1, Akshat2  {
+
+	public static void main(String[] args) {
+		Akshat3 l= new Akshat3();
+		l.o();
+	}
+
+	@Override
+	public void o() {
+		System.out.println(o);		
+		
+	}
+
+	@Override
+	public void k() {
+System.out.println(k);		
+	}
+
+	
+
+	
+	}
+

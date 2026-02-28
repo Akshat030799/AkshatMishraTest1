@@ -1,0 +1,26 @@
+import java.util.Arrays;
+
+
+import java.io.*;
+public class StringNamearrayrRverse {
+
+	public static void main(String[] args) {
+		
+		String name ="Akshat kumar Mishra";
+		String outputname=" ";
+		
+		String []naamesplit=name.split(" ");
+		System.out.println(Arrays.toString(naamesplit));
+		
+		for(String cut: naamesplit) {
+			
+			System.out.println(x);
+		
+			
+		}
+		
+		
+	
+
+
+	}}

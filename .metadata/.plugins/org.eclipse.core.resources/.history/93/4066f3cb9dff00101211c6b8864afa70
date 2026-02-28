@@ -1,0 +1,59 @@
+package testNgPrac;
+
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+import org.testng.annotations.BeforeClass;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+
+public class NewTest {
+	WebDriver driver;
+	  @BeforeClass 
+	  @Parameters({"browser"})
+	  void setup() {
+		  WebDriverManager.chromedriver().setup();
+			 driver=new ChromeDriver();
+			 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+			driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");  
+	  
+	  }
+	  
+	 @AfterClass
+	  void closeclass() {
+		  driver.quit();
+		  
+		  
+	  }
+	 
+	 @Test
+	 void Test() throws InterruptedException {
+		 driver.findElement(By.xpath("//input[@name='username']")).sendKeys("Admin");
+		  driver.findElement(By.xpath("//input[@name='password']")).sendKeys("admin123");
+		  driver.findElement(By.xpath("//button[@type='submit']")).click();
+		  boolean haikya=  driver.findElement(By.xpath("//img[@alt='client brand banner']")).isDisplayed();
+		  System.out.println(haikya);
+		  //Assert.assertTrue(haikya);
+		  
+		  if(haikya==true) {
+			  
+			  Assert.assertTrue(haikya);
+			  Thread.sleep(5000);
+		  
+		 driver.findElement(By.xpath("//p[@class='oxd-userdropdown-name']")).click();
+		 Thread.sleep(5000);
+		  driver.findElement(By.xpath("//a[text()='Logout']")).click();
+		  }
+		  else {
+			  Assert.fail();
+		  }
+	 }
+}
+	 

@@ -1,0 +1,44 @@
+package seleniumPractice;
+
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Googlesuggestiom {
+
+	public static void main(String[] args) {
+		WebDriverManager.chromedriver().setup();
+
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--no-proxy-server", "--disable-dev-shm-usage", "--no-sandbox", "--disable-gpu",
+				"--remote-allow-origins=*", "--user-data-dir=C:/temp/chrome-profile");
+
+		WebDriver driver = new ChromeDriver(options);
+
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		
+
+		driver.get("https://www.google.com/");
+driver.findElement(By.xpath("//textarea[@name='q']")).sendKeys("King");
+List<WebElement> store=driver.findElements(By.xpath("//ul[@class='G43f7e']/li"));
+System.out.println(store.size());	
+
+for(WebElement S:store) {
+System.out.println(S.getText());
+
+if (S.getText().contains("King")) {
+	S.click();
+	break;
+}
+}
+
+	}
+
+}

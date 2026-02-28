@@ -1,0 +1,19 @@
+
+public class StringBuffer {
+
+	public static void main(String[] args) {
+		String name="akshat";
+		int length=name.length();
+		String output="";
+		
+		for(int i=length-1;i>=0;i--) {
+			
+			System.out.print(name.charAt(i));
+			output=output+name.charAt(i);
+			
+		}
+		System.out.println();
+		System.out.println(output);
+	}
+
+}

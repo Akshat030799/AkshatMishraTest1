@@ -1,0 +1,33 @@
+package com.akshat1.com.akshat1;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class JavaExcuterClick {
+	public static void main(String[] args) {
+	
+	WebDriverManager.edgedriver().setup();
+	WebDriver driver =new EdgeDriver();
+	driver.get("https://www.vuse.com/");
+	driver.manage().window().maximize();
+	WebElement k=driver.findElement(By.xpath("//select"));
+	Select s=new Select(k);
+s.selectByIndex(1);
+
+WebElement g=driver.findElement(By.xpath("//button[@id='soft-av-accept']"));
+//WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(20));
+//wait.until(ExpectedConditions.visibilityOf(g));
+JavascriptExecutor jse=(JavascriptExecutor)driver;
+jse.executeScript("argument[0].scrollIntoView()", g);
+}
+}

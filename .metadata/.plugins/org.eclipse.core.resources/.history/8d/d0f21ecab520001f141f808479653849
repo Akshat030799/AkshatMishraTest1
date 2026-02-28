@@ -1,0 +1,13 @@
+package Collection;
+
+import java.util.ArrayList;
+
+public class ArrayListProg {
+
+	public static void main(String[] args) {
+		ArrayList<String> abcd=new ArrayList();
+		abcd.add("abc:");
+		System.out.println(abcd);
+	}
+
+}

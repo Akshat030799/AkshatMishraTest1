@@ -1,0 +1,56 @@
+package seleniumPractice;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class DatePicker {
+
+	public static void main(String[] args) {
+		
+		
+		WebDriverManager.chromedriver().setup();
+
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--no-proxy-server", "--disable-dev-shm-usage", "--no-sandbox", "--disable-gpu",
+				"--remote-allow-origins=*", "--user-data-dir=C:/temp/chrome-profile");
+
+		WebDriver driver = new ChromeDriver(options);
+
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+	
+		
+		driver.get("https://jqueryui.com/datepicker/");
+		driver.switchTo().frame(0);
+		driver.findElement(By.cssSelector("input#datepicker")).click();
+		String date="03";
+				String Month="July";
+				String Yeat="1999";
+		while(true) {
+			
+			//WebElement defmonth=driver.findElement(By.xpath("//span[text()='December']"));
+		//	WebElement defYear =driver.findElement(By.xpath("//span[text()='2025']"));
+			WebElement defmonth1=driver.findElement(By.xpath("//span[text()='January']"));
+			WebElement defYear1 =driver.findElement(By.xpath("//span[text()='2026']"));
+			
+			if(Yeat.equals(defYear.getText())&&Month.equals(defmonth.getText())||Yeat.equals(defYear1.getText())&&(Month.equals(defmonth1.getText()))){
+				
+				
+				break;
+			}
+			else {
+				
+				driver.findElement(By.xpath("//span[text()='Prev']")).click();
+			}
+		}
+
+
+	}
+
+}

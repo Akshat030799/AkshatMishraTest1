@@ -1,0 +1,12 @@
+package akki;
+
+public class kk {
+	public static void main(String[]args){
+		 int k=1;
+		 k++;
+		 
+		 System.out.println(k);
+		 
+		}
+
+}

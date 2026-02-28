@@ -1,0 +1,47 @@
+package PageObjectModel;
+
+import java.time.Duration;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class LoginPageClass {
+	WebDriver driver;
+@BeforeClass
+void setup() {
+	WebDriverManager.chromedriver().setup();
+
+	ChromeOptions options = new ChromeOptions();
+	options.addArguments("--no-proxy-server", "--disable-dev-shm-usage", "--no-sandbox", "--disable-gpu",
+			"--remote-allow-origins=*", "--user-data-dir=C:/temp/chrome-profile");
+
+	 driver = new ChromeDriver(options);
+
+	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+	
+
+	driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+}
+@AfterClass
+void teardown() {
+	driver.quit();
+}
+
+
+@Test
+void TestLogin() {
+	LoginTest Login = new LoginTest(driver);
+	Login.Username("Admin");
+	Login.password("admin123");
+	Login.clicks();
+	Assert.assertEquals(driver.getTitle(),"OrangeHRM" );
+	
+}
+}

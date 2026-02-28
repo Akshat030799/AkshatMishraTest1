@@ -1,0 +1,15 @@
+package akki;
+
+public class kk {
+	public static void main(String[]args){
+		 int k=1;
+	
+		 
+		 System.out.println(k);
+		 
+		}
+	public void all() {
+		System.out.println("deep");
+	}
+
+}

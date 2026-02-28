@@ -1,0 +1,23 @@
+
+public class PrimeNumber {
+
+	public static void main(String[] args) {
+		int k=23;
+		boolean istrue=true;
+		for(int i=2;i<=k;i++) {
+			if(k%i==0)
+			{
+				System.out.println(i);
+				istrue=false;
+				System.out.println("Not Prime No");
+				break;
+				
+			}
+			
+		}
+			
+		if( istrue)
+		{System.out.println("prome no");}
+	}
+
+}

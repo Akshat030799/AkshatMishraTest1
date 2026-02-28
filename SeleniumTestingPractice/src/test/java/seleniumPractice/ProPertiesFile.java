@@ -1,0 +1,29 @@
+package seleniumPractice;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Collection;
+import java.util.Properties;
+import java.util.Set;
+
+public class ProPertiesFile {
+
+	public static void main(String[] args) throws IOException {
+FileInputStream file=new FileInputStream(System.getProperty("user.dir")+"\\TestData\\UtilityFile\\Testdataakshat.properties");
+	Properties prop= new Properties();
+	prop.load(file);
+	
+	Set<Object>  aks=prop.keySet();
+	System.out.println(aks);
+	
+	Collection<Object> abc=prop.values();
+	System.out.println(abc);
+	
+	System.out.println(prop.getProperty("url1"));
+	
+	
+	
+	
+	}
+
+}

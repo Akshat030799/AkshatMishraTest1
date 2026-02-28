@@ -1,0 +1,11 @@
+package shamijha;
+
+public class Uoperator {
+
+	public static void main(String[] args) {
+		int devyani=10;	
+		System.out.println(devyani++ + devyani-- + devyani --);
+		
+	}
+
+}

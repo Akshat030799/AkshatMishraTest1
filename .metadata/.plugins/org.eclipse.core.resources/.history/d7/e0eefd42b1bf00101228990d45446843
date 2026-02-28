@@ -1,0 +1,32 @@
+package shamijha;
+
+public class Operators {
+public static void main(String[] args) {
+	int a=0;
+	
+	
+int c=500;
+int d=600;
+int k= (500>580)? 200:300;
+System.out.println(k);
+
+
+int age=60;
+
+String S= (age>60)?"Retired":"Non Retired";
+System.out.println(S);
+
+
+age+=5;
+System.out.println(age);
+
+
+age *=5;
+System.out.println(age);
+
+age/=5;
+System.out.println(age);
+
+age%=5;
+System.out.println(age);
+}}

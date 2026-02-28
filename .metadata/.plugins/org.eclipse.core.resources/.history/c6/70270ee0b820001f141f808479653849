@@ -1,0 +1,60 @@
+package Collection;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class ArrayListProg {
+
+	public static void main(String[] args) {
+		ArrayList<String> abcd=new ArrayList();
+		abcd.add("abc:");
+		abcd.add("10");
+		abcd.add("7");
+		abcd.add("jjj");
+		abcd.add("17870");
+		abcd.add("788");
+		abcd.add("c:");
+		abcd.add("1165480");
+		abcd.add("725");
+		System.out.println(abcd+" "+abcd.size());
+		System.out.println(abcd.get(2));
+		System.out.println();
+		
+		for(int i=0;i<abcd.size();i++) {
+			System.out.println(abcd.get(i));
+		}
+		System.out.println();
+		
+		
+		
+		for(String x: abcd) {
+			
+			System.out.println(x);
+		}
+		System.out.println();
+	
+		Iterator<String> iter= abcd.iterator();
+		System.out.println(abcd.iterator(););
+		System.out.println(iter);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		ArrayList<String> abcde=new ArrayList();
+		abcde.add("akkkk");
+		System.out.println(abcde);
+		System.out.println(abcde.size());
+		
+		ArrayList<Integer>ab=new ArrayList();
+		ab.add(5);
+		ab.add(7);
+		System.out.println(ab);
+	}
+
+}

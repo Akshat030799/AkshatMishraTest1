@@ -1,0 +1,11 @@
+
+public class StringBuffernames {
+
+	public static void main(String[] args) {
+		String name="Akshat@@@Mishr@@@a";
+		System.out.println(name.replace("@", "   "));
+		
+
+	}
+
+}

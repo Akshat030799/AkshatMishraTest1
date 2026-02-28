@@ -1,0 +1,32 @@
+package com.akshat1.com.akshat1;
+
+public class NewClass {
+
+	public static void main(String[] args) {
+		int a=0,b=0,c=0,d= 0;
+String k="aabbbcccdd1122";
+
+for(int i=0;i<=k.length();i++) {
+	char l=k.charAt(i);
+	
+	if(l=='a') {
+		a++;
+	}
+	if(l=='b') {
+		b++;
+	}
+	if(l=='c') {
+		c++;
+	}
+	if(l=='d') {
+		d++;
+	
+	}
+System.out.println("a= "+a);
+System.out.println("b= "+b);
+System.out.println("c= "+c);
+System.out.println("d= "+d);
+
+}
+
+}}

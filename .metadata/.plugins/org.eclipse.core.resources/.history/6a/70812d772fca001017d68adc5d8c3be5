@@ -1,0 +1,34 @@
+package myPractice;
+
+public class SuperKeyWord1 {
+
+	String name="AKshat";
+	
+	String Class="100";
+	
+	void abc() {
+		
+		
+		System.out.println("i AM PARENT");
+	}
+	
+	
+	
+}
+class SuperKeyWord2 extends SuperKeyWord1 {
+
+	String name="AKshat526515";
+	
+	
+	String Class="10065148";
+	
+	
+	void abc() {
+		
+		System.out.println(super.name);
+	}
+	
+	
+	
+	
+}

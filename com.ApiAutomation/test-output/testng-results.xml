@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-12-25T12:47:27 IST" name="Default suite" finished-at="2024-12-25T12:47:33 IST" duration-ms="6183">
+    <groups>
+    </groups>
+    <test started-at="2024-12-25T12:47:27 IST" name="Default test" finished-at="2024-12-25T12:47:33 IST" duration-ms="6183">
+      <class name="com.ApiAutomation.com.ApiAutomation.PracticeAutomation">
+        <test-method signature="VerifyTitle()[pri:0, instance:com.ApiAutomation.com.ApiAutomation.PracticeAutomation@62379589]" started-at="2024-12-25T12:47:27 IST" name="VerifyTitle" finished-at="2024-12-25T12:47:33 IST" duration-ms="6144" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyTitle -->
+      </class> <!-- com.ApiAutomation.com.ApiAutomation.PracticeAutomation -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
