@@ -1,9 +1,0 @@
-package testNgPrac;
-
-import org.testng.annotations.Test;
-
-public class Testabc {
-  @Test
-  public void f() {
-  }
-}
